@@ -15,8 +15,8 @@ Chatousel is a modern Android application built with **Jetpack Compose** that sh
 | <img src="./art/messaging_dark_mode.png" width="250"> | <img src="./art/feedback_dark_mode.png" width="250"> | <img src="./art/polls_dark_mode.png" width="250"> |
 
 
-## 📸 Gifs
- <img src="./art/demo.gif" width="800" alt=""> 
+## 📸 Video
+<video src="./art/chatousel_demo.mp4" width="800" controls></video>
 
 
 ## 🚀 Features
