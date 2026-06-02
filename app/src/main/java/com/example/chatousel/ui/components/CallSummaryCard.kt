@@ -26,6 +26,14 @@ import androidx.compose.ui.unit.dp
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.icon24
+import com.example.chatousel.ui.theme.icon32
+import com.example.chatousel.ui.theme.icon54
+import com.example.chatousel.ui.theme.roundedCorner16
+import com.example.chatousel.ui.theme.roundedCorner4
+import com.example.chatousel.ui.theme.spacing0
+import com.example.chatousel.ui.theme.spacing12
+import com.example.chatousel.ui.theme.spacing16
 
 @Composable
 fun CallSummaryCard(
@@ -41,12 +49,12 @@ fun CallSummaryCard(
     ) {
         Surface(
             color = MaterialTheme.colorScheme.surface,
-            shape = RoundedCornerShape(4.dp, 18.dp, 18.dp, 18.dp),
+            shape = RoundedCornerShape(roundedCorner4, roundedCorner16, roundedCorner16, roundedCorner16),
             tonalElevation = 0.dp,
         ) {
             Column(
-                modifier = Modifier.padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(16.dp),
+                modifier = Modifier.padding(spacing16),
+                verticalArrangement = Arrangement.spacedBy(spacing16),
             ) {
                 AudioPlayerStub(duration = duration)
                 Text(
@@ -69,18 +77,18 @@ fun CallSummaryCard(
 private fun AudioPlayerStub(duration: String) {
     Surface(
         color = MaterialTheme.colorScheme.surfaceVariant,
-        shape = RoundedCornerShape(16.dp),
+        shape = RoundedCornerShape(roundedCorner16),
     ) {
         Row(
-            modifier = Modifier.padding(horizontal = 14.dp, vertical = 12.dp),
+            modifier = Modifier.padding(horizontal = spacing16, vertical = spacing12),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
+            horizontalArrangement = Arrangement.spacedBy(spacing12),
         ) {
             Icon(
                 imageVector = Icons.Default.PlayArrow,
                 contentDescription = "Play audio",
                 tint = MaterialTheme.equalColors.actionGreen,
-                modifier = Modifier.size(34.dp),
+                modifier = Modifier.size(icon32),
             )
             Box(
                 modifier = Modifier
@@ -103,7 +111,7 @@ private fun ShareButton(onClick: () -> Unit) {
     IconButton(
         onClick = onClick,
         modifier = Modifier
-            .size(52.dp)
+            .size(icon54)
             .clip(CircleShape)
             .background(MaterialTheme.colorScheme.surface),
     ) {

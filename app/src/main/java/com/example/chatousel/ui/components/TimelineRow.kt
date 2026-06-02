@@ -10,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.chatousel.ui.theme.spacing12
+import com.example.chatousel.ui.theme.spacing24
 
 @Composable
 fun TimelineRow(
@@ -21,16 +23,16 @@ fun TimelineRow(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .padding(horizontal = 24.dp, vertical = 10.dp),
+            .padding(horizontal = spacing24, vertical = spacing12),
         verticalAlignment = Alignment.Top,
     ) {
         avatar()
-        Spacer(Modifier.width(12.dp))
+        Spacer(Modifier.width(spacing12))
         Box(modifier = Modifier.weight(1f)) {
             content()
         }
         trailing?.let {
-            Spacer(Modifier.width(12.dp))
+            Spacer(Modifier.width(spacing12))
             Box(
                 modifier = Modifier.padding(top = 168.dp),
                 contentAlignment = Alignment.Center,

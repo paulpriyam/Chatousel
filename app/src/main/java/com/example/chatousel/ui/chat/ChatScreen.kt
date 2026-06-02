@@ -17,6 +17,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.chatousel.model.ChatItem
 import com.example.chatousel.ui.components.*
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.spacing12
+import com.example.chatousel.ui.theme.spacing16
+import com.example.chatousel.ui.theme.spacing8
 
 @Composable
 fun ChatScreen(
@@ -39,7 +42,7 @@ fun ChatScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
-            contentPadding = PaddingValues(vertical = 16.dp),
+            contentPadding = PaddingValues(vertical = spacing16),
         ) {
             items(
                 items = uiState.items,
@@ -50,19 +53,19 @@ fun ChatScreen(
                         text = item.text,
                         avatarRes = item.avatarRes,
                         time = item.time,
-                        modifier = Modifier.padding(bottom = 12.dp)
+                        modifier = Modifier.padding(bottom = spacing12)
                     )
 
                     is ChatItem.CallSummary -> CallSummaryCard(
                         duration = item.duration,
                         bullets = item.bullets,
-                        modifier = Modifier.padding(bottom = 12.dp),
+                        modifier = Modifier.padding(bottom = spacing12),
                         onShareClick = { /* Handle share */ }
                     )
 
                     is ChatItem.Divider -> TimelineDivider(
                         label = item.label,
-                        modifier = Modifier.padding(vertical = 8.dp)
+                        modifier = Modifier.padding(vertical = spacing8)
                     )
 
                     is ChatItem.RatingPrompt -> RatingPromptCard(
@@ -71,7 +74,7 @@ fun ChatScreen(
                         onRatingSelected = { rating ->
                             viewModel.onCallRatingSet(item.id, rating)
                         },
-                        modifier = Modifier.padding(bottom = 12.dp)
+                        modifier = Modifier.padding(bottom = spacing12)
                     )
 
                     is ChatItem.Carousel -> CarouselSection(
@@ -84,7 +87,7 @@ fun ChatScreen(
                         onRatingSelected = { card, rating ->
                             viewModel.onCarouselFeedbackRatingSet(card.id, rating)
                         },
-                        modifier = Modifier.padding(vertical = 12.dp)
+                        modifier = Modifier.padding(vertical = spacing12)
                     )
                 }
             }

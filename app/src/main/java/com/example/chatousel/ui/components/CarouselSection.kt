@@ -9,12 +9,16 @@ import androidx.compose.foundation.pager.PageSize
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.example.chatousel.mockdata.EqualMockData
 import com.example.chatousel.model.CarouselCard
 import com.example.chatousel.model.ChatItem
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
+import com.example.chatousel.ui.theme.pagerSize
+import com.example.chatousel.ui.theme.spacing12
+import com.example.chatousel.ui.theme.spacing28
+import com.example.chatousel.ui.theme.spacing40
+import com.example.chatousel.ui.theme.spacing8
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -32,17 +36,17 @@ fun CarouselSection(
 
     HorizontalPager(
         state = pagerState,
-        modifier = modifier.heightIn(min = 300.dp),
-        pageSize = PageSize.Fixed(300.dp),
-        pageSpacing = 12.dp,
-        contentPadding = PaddingValues(start = 40.dp, end = 28.dp),
+        modifier = modifier.heightIn(min = pagerSize),
+        pageSize = PageSize.Fixed(pagerSize),
+        pageSpacing = spacing12,
+        contentPadding = PaddingValues(start = spacing40, end = spacing28),
         key = { page -> cards[page].id },
     ) { page ->
         val card = cards[page]
         when (card) {
             is CarouselCard.Image -> ImageCard(
                 card = card,
-                modifier = Modifier.padding(vertical = 8.dp),
+                modifier = Modifier.padding(vertical = spacing8),
                 onPrimaryClick = onImagePrimaryClick,
                 onSecondaryClick = onImageSecondaryClick,
             )
@@ -51,14 +55,14 @@ fun CarouselSection(
                 card = card,
                 selectedOption = selectedPollOptions[card.id],
                 onOptionSelected = onPollOptionSelected,
-                modifier = Modifier.padding(vertical = 8.dp),
+                modifier = Modifier.padding(vertical = spacing8),
             )
 
             is CarouselCard.Feedback -> FeedbackCard(
                 card = card,
                 selectedRating = selectedRatings[card.id] ?: card.initialRating,
                 onRatingSelected = onRatingSelected,
-                modifier = Modifier.padding(vertical = 8.dp),
+                modifier = Modifier.padding(vertical = spacing8),
             )
         }
     }

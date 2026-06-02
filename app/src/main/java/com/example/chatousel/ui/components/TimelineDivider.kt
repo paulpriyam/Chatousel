@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.spacing12
 
 @Composable
 fun TimelineDivider(
@@ -21,7 +22,7 @@ fun TimelineDivider(
         color = MaterialTheme.equalColors.dividerText,
         modifier = modifier
             .fillMaxWidth()
-            .padding(vertical = 10.dp),
+            .padding(vertical = spacing12),
         textAlign = TextAlign.Center,
     )
 }

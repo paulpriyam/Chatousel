@@ -30,6 +30,13 @@ import com.example.chatousel.model.CarouselCard
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.icon24
+import com.example.chatousel.ui.theme.progressBarHeight
+import com.example.chatousel.ui.theme.roundedCorner16
+import com.example.chatousel.ui.theme.spacing12
+import com.example.chatousel.ui.theme.spacing16
+import com.example.chatousel.ui.theme.spacing4
+import com.example.chatousel.ui.theme.spacing8
 
 @Composable
 fun PollCard(
@@ -41,13 +48,13 @@ fun PollCard(
     Surface(
         modifier = modifier.fillMaxWidth(),
         color = MaterialTheme.equalColors.incomingBubble,
-        shape = RoundedCornerShape(18.dp)
+        shape = RoundedCornerShape(roundedCorner16)
     ) {
         Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+            modifier = Modifier.padding(spacing16),
+            verticalArrangement = Arrangement.spacedBy(spacing12)
         ) {
-            Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Column(verticalArrangement = Arrangement.spacedBy(spacing4)) {
                 Text(
                     text = card.question,
                     style = MaterialTheme.typography.titleMedium,
@@ -63,7 +70,7 @@ fun PollCard(
 
             val totalVotes = card.votes.values.sum().coerceAtLeast(1)
 
-            Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+            Column(verticalArrangement = Arrangement.spacedBy(spacing16)) {
                 card.options.forEach { option ->
                     val voteCount = card.votes[option] ?: 0
                     val progress = voteCount.toFloat() / totalVotes
@@ -78,12 +85,12 @@ fun PollCard(
             }
 
             HorizontalDivider(
-                modifier = Modifier.padding(top = 8.dp),
+                modifier = Modifier.padding(top = spacing8),
                 color = MaterialTheme.equalColors.secondaryText.copy(alpha = 0.1f)
             )
 
             TextButton(
-                onClick = { /* TODO */ },
+                onClick = { /* not implemented */ },
                 modifier = Modifier.align(Alignment.CenterHorizontally)
             ) {
                 Text(
@@ -114,16 +121,16 @@ private fun PollOption(
                 onClick = onClick,
             ),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(12.dp)
+        horizontalArrangement = Arrangement.spacedBy(spacing12)
     ) {
         Icon(
             imageVector = if (selected) Icons.Default.CheckCircle else Icons.Default.RadioButtonUnchecked,
             contentDescription = null,
             tint = if (selected) MaterialTheme.equalColors.actionGreen else MaterialTheme.equalColors.secondaryText.copy(alpha = 0.5f),
-            modifier = Modifier.size(24.dp)
+            modifier = Modifier.size(icon24)
         )
 
-        Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        Column(modifier = Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(spacing4)) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -144,7 +151,7 @@ private fun PollOption(
                 progress = { progress },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(8.dp),
+                    .height(progressBarHeight),
                 color = MaterialTheme.equalColors.actionGreen,
                 trackColor = MaterialTheme.equalColors.secondaryText.copy(alpha = 0.1f),
                 strokeCap = StrokeCap.Round

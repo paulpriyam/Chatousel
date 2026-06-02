@@ -35,6 +35,9 @@ import com.example.chatousel.model.Contact
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.icon48
+import com.example.chatousel.ui.theme.spacing12
+import com.example.chatousel.ui.theme.spacing8
 
 @Composable
 fun TopBar(
@@ -53,7 +56,7 @@ fun TopBar(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 8.dp, vertical = 10.dp),
+                .padding(horizontal = spacing8, vertical =spacing12),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             IconButton(
@@ -70,11 +73,11 @@ fun TopBar(
                 painter = painterResource(contact.avatarRes),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(48.dp)
+                    .size(icon48)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
             )
-            Spacer(Modifier.width(12.dp))
+            Spacer(Modifier.width(spacing12))
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = contact.name,

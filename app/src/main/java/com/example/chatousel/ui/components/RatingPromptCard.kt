@@ -20,6 +20,11 @@ import androidx.compose.ui.unit.dp
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.roundedCorner16
+import com.example.chatousel.ui.theme.spacing12
+import com.example.chatousel.ui.theme.spacing16
+import com.example.chatousel.ui.theme.spacing24
+import com.example.chatousel.ui.theme.spacing40
 
 @Composable
 fun RatingPromptCard(
@@ -29,14 +34,14 @@ fun RatingPromptCard(
     modifier: Modifier = Modifier,
 ) {
     Surface(
-        modifier = modifier.padding(horizontal = 40.dp),
+        modifier = modifier.padding(horizontal = spacing40),
         color = MaterialTheme.equalColors.incomingBubble,
-        shape = RoundedCornerShape(18.dp),
+        shape = RoundedCornerShape(roundedCorner16),
         tonalElevation = 0.dp,
     ) {
         Column(
-            modifier = Modifier.padding(horizontal = 22.dp, vertical = 18.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+            modifier = Modifier.padding(horizontal = spacing24, vertical = spacing16),
+            verticalArrangement = Arrangement.spacedBy(spacing12),
         ) {
             RatingStars(
                 selectedRating = selectedRating,

@@ -32,6 +32,11 @@ import com.example.chatousel.model.CarouselCard
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.imageCardHeight
+import com.example.chatousel.ui.theme.roundedCorner16
+import com.example.chatousel.ui.theme.roundedCorner8
+import com.example.chatousel.ui.theme.spacing16
+import com.example.chatousel.ui.theme.spacing8
 
 @Composable
 fun ImageCard(
@@ -46,13 +51,13 @@ fun ImageCard(
             contentDescription = null,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(140.dp)
-                .clip(RoundedCornerShape(8.dp)),
+                .height(imageCardHeight)
+                .clip(RoundedCornerShape(roundedCorner8)),
             contentScale = ContentScale.Crop,
         )
         Column(
-            modifier = Modifier.padding(top = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.padding(top = spacing8),
+            verticalArrangement = Arrangement.spacedBy(spacing8),
         ) {
             Text(
                 text = card.body,
@@ -103,13 +108,13 @@ internal fun CarouselCardSurface(
     Surface(
         modifier = modifier,
         color = MaterialTheme.colorScheme.surface,
-        shape = RoundedCornerShape(18.dp),
+        shape = RoundedCornerShape(roundedCorner16),
         tonalElevation = 1.dp,
         shadowElevation = 1.dp,
     ) {
         Column(
-            modifier = Modifier.padding(8.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.padding(spacing8),
+            verticalArrangement = Arrangement.spacedBy(spacing8),
             content = content
         )
     }
@@ -128,7 +133,7 @@ fun ImageCardPreview() {
                 primaryAction = "View Schedule",
                 secondaryAction = "View Details",
             ),
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(spacing16)
         )
     }
 }

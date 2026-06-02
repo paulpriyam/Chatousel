@@ -14,6 +14,7 @@ import com.example.chatousel.model.CarouselCard
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.spacing16
 
 @Composable
 fun FeedbackCard(
@@ -24,8 +25,8 @@ fun FeedbackCard(
 ) {
     CarouselCardSurface(modifier = modifier) {
         Column(
-            modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(18.dp),
+            modifier = Modifier.padding(spacing16),
+            verticalArrangement = Arrangement.spacedBy(spacing16),
         ) {
             Text(
                 text = card.prompt,
@@ -57,7 +58,7 @@ fun FeedbackCardPreview() {
             ),
             selectedRating = 4,
             onRatingSelected = { _, _ -> },
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(spacing16)
         )
     }
 }

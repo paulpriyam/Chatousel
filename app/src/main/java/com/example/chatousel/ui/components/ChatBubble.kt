@@ -22,6 +22,11 @@ import com.example.chatousel.R
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.icon54
+import com.example.chatousel.ui.theme.spacing0
+import com.example.chatousel.ui.theme.spacing12
+import com.example.chatousel.ui.theme.spacing16
+import com.example.chatousel.ui.theme.spacing4
 
 @Composable
 fun ChatBubble(
@@ -36,7 +41,7 @@ fun ChatBubble(
                 painter = painterResource(avatarRes),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(54.dp)
+                    .size(icon54)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
             )
@@ -45,12 +50,12 @@ fun ChatBubble(
     ) {
         Surface(
             color = MaterialTheme.equalColors.incomingBubble,
-            shape = RoundedCornerShape(0.dp, 18.dp, 18.dp, 18.dp),
+            shape = RoundedCornerShape(spacing0, spacing16, spacing16, spacing16),
             tonalElevation = 0.dp,
         ) {
             Column(
-                modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
-                verticalArrangement = Arrangement.spacedBy(4.dp),
+                modifier = Modifier.padding(horizontal = spacing16, vertical = spacing12),
+                verticalArrangement = Arrangement.spacedBy(spacing4),
             ) {
                 Text(
                     text = text,
