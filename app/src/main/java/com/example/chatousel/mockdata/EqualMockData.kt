@@ -58,6 +58,7 @@ object EqualMockData {
                         id = "callback-poll",
                         question = "Can Argentina retain their world cup title",
                         options = listOf("Yes", "No", "Maybe", "Can't Say"),
+                        votes = mapOf("Yes" to 12, "No" to 3, "Maybe" to 1, "Can't Say" to 0)
                     ),
                     CarouselCard.Image(
                         id = "portugal-card",

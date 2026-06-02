@@ -18,6 +18,7 @@ sealed interface CarouselCard {
         override val id: String,
         val question: String,
         val options: List<String>,
+        val votes: Map<String, Int> = emptyMap(),
     ) : CarouselCard
 
     data class Feedback(

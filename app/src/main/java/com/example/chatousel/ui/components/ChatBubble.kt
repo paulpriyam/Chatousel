@@ -1,8 +1,83 @@
 package com.example.chatousel.ui.components
 
+import androidx.annotation.DrawableRes
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import com.example.chatousel.R
+import com.example.chatousel.ui.preview.EqualPreview
+import com.example.chatousel.ui.theme.ChatouselTheme
+import com.example.chatousel.ui.theme.equalColors
 
 @Composable
-fun ChatBubble(){
+fun ChatBubble(
+    text: String,
+    @DrawableRes avatarRes: Int,
+    modifier: Modifier = Modifier,
+    time: String? = null,
+) {
+    TimelineRow(
+        avatar = {
+            Image(
+                painter = painterResource(avatarRes),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(54.dp)
+                    .clip(CircleShape),
+                contentScale = ContentScale.Crop,
+            )
+        },
+        modifier = modifier,
+    ) {
+        Surface(
+            color = MaterialTheme.equalColors.incomingBubble,
+            shape = RoundedCornerShape(0.dp, 18.dp, 18.dp, 18.dp),
+            tonalElevation = 0.dp,
+        ) {
+            Column(
+                modifier = Modifier.padding(horizontal = 18.dp, vertical = 14.dp),
+                verticalArrangement = Arrangement.spacedBy(4.dp),
+            ) {
+                Text(
+                    text = text,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.equalColors.primaryText,
+                )
+                time?.let {
+                    Text(
+                        text = it,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.equalColors.secondaryText,
+                        modifier = Modifier.align(Alignment.End),
+                    )
+                }
+            }
+        }
+    }
+}
 
+@EqualPreview
+@Composable
+fun ChatBubblePreview() {
+    ChatouselTheme {
+        ChatBubble(
+            text = "Are you calling about your order that includes your LED strip light?",
+            avatarRes = R.drawable.avatar,
+            time = "10:07 AM"
+        )
+    }
 }
