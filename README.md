@@ -1,6 +1,23 @@
 # Chatousel
 
-Chatousel is a modern Android application built with **Jetpack Compose** that showcases a rich, interactive chat interface. It goes beyond simple text messaging by incorporating dynamic carousels.
+Chatousel is a modern Android application built with **Jetpack Compose** that showcases a rich, interactive chat interface. It goes beyond simple text messaging by incorporating dynamic carousels, interactive polls, and structured call summaries.
+
+## 📸 Screenshots
+
+### Light Mode
+|                  Messaging                  |                  Feedback                  |            Interactive Polls            |
+|:-------------------------------------------:|:------------------------------------------:|:---------------------------------------:|
+| <img src="./art/messaging.png" width="250"> | <img src="./art/feedback.png" width="250"> | <img src="./art/polls.png" width="250"> |
+
+### Dark Mode
+|                       Messaging                       |                       Feedback                       |                 Interactive Polls                 |
+|:-----------------------------------------------------:|:----------------------------------------------------:|:-------------------------------------------------:|
+| <img src="./art/messaging_dark_mode.png" width="250"> | <img src="./art/feedback_dark_mode.png" width="250"> | <img src="./art/polls_dark_mode.png" width="250"> |
+
+
+## 📸 Gifs
+ <img src="./art/demo.gif" width="800" alt=""> 
+
 
 ## 🚀 Features
 
