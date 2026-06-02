@@ -51,3 +51,8 @@ Chatousel is a modern Android application built with **Jetpack Compose** that sh
 3. Sync the Gradle files.
 4. Run the app on an emulator or a physical device (API 24+).
 
+## 🚀Release
+Alternatively, you can download the **APK** and a **ZIP** of the project directly from the **GitHub Releases** section.
+
+
+
