@@ -22,7 +22,7 @@ import com.example.chatousel.R
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
-import com.example.chatousel.ui.theme.icon54
+import com.example.chatousel.ui.theme.icon40
 import com.example.chatousel.ui.theme.spacing0
 import com.example.chatousel.ui.theme.spacing12
 import com.example.chatousel.ui.theme.spacing16
@@ -41,7 +41,7 @@ fun ChatBubble(
                 painter = painterResource(avatarRes),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(icon54)
+                    .size(icon40)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
             )
@@ -59,7 +59,7 @@ fun ChatBubble(
             ) {
                 Text(
                     text = text,
-                    style = MaterialTheme.typography.bodyLarge,
+                    style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.equalColors.primaryText,
                 )
                 time?.let {

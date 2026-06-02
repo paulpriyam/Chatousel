@@ -18,7 +18,7 @@ fun TimelineDivider(
 ) {
     Text(
         text = label,
-        style = MaterialTheme.typography.bodyMedium,
+        style = MaterialTheme.typography.bodySmall,
         color = MaterialTheme.equalColors.dividerText,
         modifier = modifier
             .fillMaxWidth()

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -57,15 +58,17 @@ fun ImageCard(
         )
         Column(
             modifier = Modifier.padding(top = spacing8),
-            verticalArrangement = Arrangement.spacedBy(spacing8),
         ) {
             Text(
                 text = card.body,
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.equalColors.primaryText,
             )
+
+            Spacer(modifier = Modifier.height(spacing8))
+
             HorizontalDivider(
-                color = MaterialTheme.equalColors.secondaryText.copy(alpha = 0.6f)
+                color = MaterialTheme.equalColors.secondaryText.copy(alpha = 0.1f)
             )
 
 
@@ -81,7 +84,7 @@ fun ImageCard(
                 )
             }
             HorizontalDivider(
-                color = MaterialTheme.equalColors.secondaryText.copy(alpha = 0.6f)
+                color = MaterialTheme.equalColors.secondaryText.copy(alpha = 0.1f)
             )
 
             TextButton(

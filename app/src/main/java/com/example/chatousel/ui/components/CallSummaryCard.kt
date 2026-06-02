@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -28,6 +30,7 @@ import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
 import com.example.chatousel.ui.theme.icon24
 import com.example.chatousel.ui.theme.icon32
+import com.example.chatousel.ui.theme.icon40
 import com.example.chatousel.ui.theme.icon54
 import com.example.chatousel.ui.theme.roundedCorner16
 import com.example.chatousel.ui.theme.roundedCorner4
@@ -59,13 +62,13 @@ fun CallSummaryCard(
                 AudioPlayerStub(duration = duration)
                 Text(
                     text = "Call Summary",
-                    style = MaterialTheme.typography.titleMedium,
+                    style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.equalColors.secondaryText,
                     fontWeight = FontWeight.SemiBold,
                 )
                 Text(
                     text = bullets.joinToString(separator = "\n") { "- $it" },
-                    style = MaterialTheme.typography.bodyLarge,
+                    style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.equalColors.primaryText,
                 )
             }
@@ -90,18 +93,44 @@ private fun AudioPlayerStub(duration: String) {
                 tint = MaterialTheme.equalColors.actionGreen,
                 modifier = Modifier.size(icon32),
             )
-            Box(
-                modifier = Modifier
-                    .weight(1f)
-                    .size(height = 4.dp, width = 1.dp)
-                    .clip(RoundedCornerShape(50))
-                    .background(MaterialTheme.equalColors.primaryText),
-            )
-            Text(
-                text = duration,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.equalColors.primaryText,
-            )
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.spacedBy(4.dp)
+            ) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(2.dp)
+                        .clip(CircleShape)
+                        .background(MaterialTheme.equalColors.primaryText),
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        text = "00:00",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.equalColors.primaryText,
+                    )
+                    Text(
+                        text = duration,
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.equalColors.primaryText,
+                    )
+                }
+            }
+            Surface(
+                color = MaterialTheme.equalColors.primaryText.copy(alpha = 0.1f),
+                shape = CircleShape,
+            ) {
+                Text(
+                    text = "1x",
+                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.equalColors.primaryText,
+                )
+            }
         }
     }
 }
@@ -111,7 +140,7 @@ private fun ShareButton(onClick: () -> Unit) {
     IconButton(
         onClick = onClick,
         modifier = Modifier
-            .size(icon54)
+            .size(icon40)
             .clip(CircleShape)
             .background(MaterialTheme.colorScheme.surface),
     ) {

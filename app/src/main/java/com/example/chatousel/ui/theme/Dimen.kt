@@ -25,7 +25,7 @@ val roundedCorner16 = 16.dp
 val roundedCorner24 = 24.dp
 val progressBarHeight = 8.dp
 
-val imageCardHeight = 140.dp
+val imageCardHeight = 200.dp
 val pagerSize = 300.dp
 
 
@@ -34,5 +34,6 @@ val pagerSize = 300.dp
 val icon16 = 16.dp
 val icon24 = 24.dp
 val icon32 = 32.dp
+val icon40 = 40.dp
 val icon48 = 48.dp
 val icon54 = 54.dp

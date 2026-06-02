@@ -47,8 +47,10 @@ fun PollCard(
 ) {
     Surface(
         modifier = modifier.fillMaxWidth(),
-        color = MaterialTheme.equalColors.incomingBubble,
-        shape = RoundedCornerShape(roundedCorner16)
+        color = MaterialTheme.colorScheme.surface,
+        shape = RoundedCornerShape(roundedCorner16),
+        tonalElevation = 1.dp,
+        shadowElevation = 1.dp,
     ) {
         Column(
             modifier = Modifier.padding(spacing16),

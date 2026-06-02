@@ -16,26 +16,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.equalColors
+import com.example.chatousel.ui.theme.icon40
 import com.example.chatousel.ui.theme.icon54
 
 @Composable
 fun AssistantAvatar(modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
-            .size(icon54)
+            .size(icon40)
             .clip(CircleShape)
             .background(MaterialTheme.equalColors.actionGreen),
         contentAlignment = Alignment.Center,
     ) {
         Column(verticalArrangement = Arrangement.spacedBy(3.dp)) {
-            repeat(3) {
+            repeat(2) {
                 Row(horizontalArrangement = Arrangement.spacedBy(3.dp)) {
                     repeat(3) {
                         Box(
                             modifier = Modifier
                                 .size(5.dp)
                                 .clip(CircleShape)
-                                .background(Color.Black),
+                                .background(MaterialTheme.colorScheme.background),
                         )
                     }
                 }

@@ -14,7 +14,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.MoreVert
@@ -30,12 +29,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
 import com.example.chatousel.model.Contact
 import com.example.chatousel.ui.preview.EqualPreview
 import com.example.chatousel.ui.theme.ChatouselTheme
 import com.example.chatousel.ui.theme.equalColors
-import com.example.chatousel.ui.theme.icon48
+import com.example.chatousel.ui.theme.icon40
 import com.example.chatousel.ui.theme.spacing12
 import com.example.chatousel.ui.theme.spacing8
 
@@ -56,7 +54,7 @@ fun TopBar(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = spacing8, vertical =spacing12),
+                .padding(horizontal = spacing8, vertical = spacing12),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             IconButton(
@@ -73,7 +71,7 @@ fun TopBar(
                 painter = painterResource(contact.avatarRes),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(icon48)
+                    .size(icon40)
                     .clip(CircleShape),
                 contentScale = ContentScale.Crop,
             )
@@ -81,14 +79,14 @@ fun TopBar(
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = contact.name,
-                    style = MaterialTheme.typography.headlineSmall,
+                    style = MaterialTheme.typography.bodyLarge,
                     color = MaterialTheme.equalColors.primaryText,
                     maxLines = 1,
                 )
                 Text(
                     text = contact.phone,
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.equalColors.primaryText,
+                    style = MaterialTheme.typography.labelLarge,
+                    color = MaterialTheme.equalColors.secondaryText,
                     maxLines = 1,
                 )
             }
